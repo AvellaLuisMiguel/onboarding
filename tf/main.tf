@@ -126,11 +126,11 @@ resource "aws_lambda_permission" "allow_api_gateway" {
 }
 
 resource "aws_s3_bucket" "lambda_bucket" {
-  bucket = "my-lambda-bucket-unique-12345" # Cambia a un nombre único
+  bucket = "my-lambda-bucket-unique-12345"
 }
 
 resource "aws_s3_bucket_object" "lambda_object" {
   bucket = aws_s3_bucket.lambda_bucket.id
   key    = "lambda.zip"
-  source = "../lambda.zip" # Asume que has creado un zip de tu función Lambda
+  source = "../lambda.zip"
 }
