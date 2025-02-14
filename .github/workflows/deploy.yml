@@ -25,8 +25,9 @@ jobs:
 
     - name: Install Terraform
       run: |
-        curl -LO "https://releases.hashicorp.com/terraform/$(curl -s https://checkpoint-api.hashicorp.com/v1/versions/terraform | jq -r '.[-1].version')/terraform_$(curl -s https://checkpoint-api.hashicorp.com/v1/versions/terraform | jq -r '.[-1].version')_linux_amd64.zip"
-        unzip terraform_*_linux_amd64.zip
+        TERRAFORM_VERSION="1.5.0"
+        curl -LO "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
+        unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
         sudo mv terraform /usr/local/bin/
         terraform -version  # Verificar la instalación
 
