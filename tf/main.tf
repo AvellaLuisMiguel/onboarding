@@ -132,5 +132,5 @@ resource "aws_s3_bucket" "lambda_bucket" {
 resource "aws_s3_bucket_object" "lambda_object" {
   bucket = aws_s3_bucket.lambda_bucket.id
   key    = "lambda.zip"
-  source = "lambda.zip" # Asume que has creado un zip de tu función Lambda
+  source = "../lambda.zip" # Asume que has creado un zip de tu función Lambda
 }
