@@ -42,9 +42,9 @@ jobs:
       run: zip lambda.zip lambda/main.py
 
     - name: Terraform Init
-      working-directory: ./terraform
+      working-directory: ./tf
       run: terraform init
 
     - name: Terraform Apply
-      working-directory: ./terraform
+      working-directory: ./tf
       run: terraform apply -auto-approve
